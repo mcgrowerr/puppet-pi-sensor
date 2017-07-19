@@ -13,7 +13,7 @@ class dht22 {
 
     exec { 'git-checkout-adafruit-dht':
         command => 'git clone https://github.com/adafruit/Adafruit_Python_DHT.git /opt/Adafruit_Python_DHT',
-        unless  => 'test -d /opt/Adafruit_Python_DHT/.git',
+        unless  => '/usr/bin/test -d /opt/Adafruit_Python_DHT/.git',
         require => [ Class['helpers::install::git'], File['/opt/Adafruit_Python_DHT'] ],
     }
 
