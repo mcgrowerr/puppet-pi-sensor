@@ -9,4 +9,8 @@ class role::growtent {
         influx_db    => 'telegraf',
     }
 
+    class { 'telegraf::plugins::input_dht22':
+        require => [ Class['dht22'], Class['telegraf'] ],
+    }
+
 }
