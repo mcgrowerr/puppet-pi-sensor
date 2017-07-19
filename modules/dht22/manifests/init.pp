@@ -33,5 +33,12 @@ class dht22( $gpio_pin='4' ) {
         mode    => '0755',
         content => template('dht22/read_dht22.py.erb'),
     }
+    file { '/usr/local/bin/read_dht22.sh':
+        ensure  => 'present',
+        owner   => 'root',
+        group   => 'root',
+        mode    => '0755',
+        content => template('dht22/read_dht22.sh.erb'),
+    }
 
 }
