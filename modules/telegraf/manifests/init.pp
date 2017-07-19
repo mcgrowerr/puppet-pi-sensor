@@ -18,14 +18,14 @@ class telegraf ( $influxdb_url='http://localhost:8086', $influx_db='telegraf' ) 
     }
 
     exec { 'download-telegraf':
-        command => 'curl -o /opt/telegraf-1.3.4_linux_armhf.tar.gz https://dl.influxdata.com/telegraf/releases/telegraf-1.3.4_linux_armhf.tar.gz',
+        command => '/usr/bin/curl -o /opt/telegraf-1.3.4_linux_armhf.tar.gz https://dl.influxdata.com/telegraf/releases/telegraf-1.3.4_linux_armhf.tar.gz',
         user    => 'root',
         creates => '/opt/telegraf-1.3.4_linux_armhf.tar.gz',
         require => Class['helpers::install::curl'],
     }
 
     exec { 'extract-telegraf':
-        command => 'tar -C /opt -xf /opt/telegraf-1.3.4_linux_armhf.tar.gz',
+        command => '/usr/bin/tar -C /opt -xf /opt/telegraf-1.3.4_linux_armhf.tar.gz',
         user    => 'root',
         group   => 'root',
         creates => '/opt/telegraf/usr/bin/telegraf',
