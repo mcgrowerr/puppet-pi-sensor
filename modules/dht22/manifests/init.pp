@@ -18,7 +18,7 @@ class dht22 {
     }
 
     exec { 'install-adafruit-dht':
-        command => 'python2 setup.py install'
+        command => 'python2 setup.py install',
         user    => 'root',
         cwd     => '/opt/Adafruit_Python_DHT',
         require => [ Class['helpers::install::python2'], Exec['git-checkout-adafruit-dht'] ],
