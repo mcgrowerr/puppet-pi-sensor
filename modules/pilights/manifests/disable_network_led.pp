@@ -11,7 +11,7 @@ class pilights::disable_network_led {
         owner   => 'root',
         group   => 'root',
         mode    => '0755',
-        content => template('pilights/disable_network_led.service.erb')
+        content => template('pilights/disable_network_led.service.erb'),
         require => File['/usr/local/bin/disable_network_led'],
     }
 
