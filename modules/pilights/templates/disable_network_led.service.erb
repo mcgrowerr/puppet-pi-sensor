@@ -1,0 +1,10 @@
+[Unit]
+Description=Turn off network activity light
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/disable_network_led
+
+[Install]
+WantedBy=default.target
