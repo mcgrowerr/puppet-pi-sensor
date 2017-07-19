@@ -2,5 +2,6 @@
 class role::growtent {
 
     include dht22
+    include pilights::disable_network_led
 
 }
