@@ -2,6 +2,7 @@
 class dht22 {
 
     include helpers::install::git
+    include helpers::install::gcc
     include helpers::install::python2
 
     file { '/opt/Adafruit_Python_DHT':
@@ -21,7 +22,7 @@ class dht22 {
         command => '/usr/bin/python2 setup.py install',
         user    => 'root',
         cwd     => '/opt/Adafruit_Python_DHT',
-        require => [ Class['helpers::install::python2'], Exec['git-checkout-adafruit-dht'] ],
+        require => [ Class['helpers::install::python2'], Exec['git-checkout-adafruit-dht'], Class['helpers::install::gcc'] ],
     }
 
 }
