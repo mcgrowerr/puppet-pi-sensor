@@ -72,7 +72,7 @@ class telegraf ( $influxdb_url='http://localhost:8086', $influx_db='telegraf' ) 
     }
 
     service { 'telegraf':
-        ensure => 'started',
+        ensure => 'running',
         enable => true,
     }
 
