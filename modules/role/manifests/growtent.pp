@@ -10,7 +10,7 @@ class role::growtent {
     }
 
     class { 'telegraf::plugins::input_dht22':
-        require => [ Class['dht22'], Class['telegraf'] ],
+        require => Class['dht22'],
     }
 
 }
