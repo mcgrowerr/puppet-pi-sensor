@@ -16,7 +16,7 @@ class pilights::disable_network_led {
     }
 
     service { 'disable_network_led':
-        ensure  => 'started',
+        ensure  => 'running',
         enable  => true,
         require => File['/etc/systemd/system/disable_network_led.service'],
     }
