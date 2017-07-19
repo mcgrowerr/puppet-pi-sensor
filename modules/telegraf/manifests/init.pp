@@ -10,7 +10,7 @@ class telegraf ( $influxdb_url='http://localhost:8086', $influx_db='telegraf' ) 
     user { 'telegraf':
         ensure  => present,
         gid     => 'telegraf',
-        groups  => ['docker'],
+        groups  => ['wheel'],
         home    => '/etc/telegraf',
         shell   => '/bin/false',
         system  => true,
