@@ -22,6 +22,7 @@ class dht22 {
         command => '/usr/bin/python2 setup.py install',
         user    => 'root',
         cwd     => '/opt/Adafruit_Python_DHT',
+        unless  => '/usr/bin/test -f /usr/lib/python2.7/site-packages/Adafruit_DHT-1.3.2-py2.7-linux-armv7l.egg',
         require => [ Class['helpers::install::python2'], Exec['git-checkout-adafruit-dht'], Class['helpers::install::gcc'] ],
     }
 
