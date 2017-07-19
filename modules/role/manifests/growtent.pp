@@ -3,6 +3,7 @@ class role::growtent {
 
     include dht22
     include pilights::disable_network_led
+    include sudoers
 
     class { 'telegraf':
         influxdb_url => 'http://10.10.105.106:8086',
