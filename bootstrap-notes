@@ -1,0 +1,31 @@
+Install alarm
+
+change alarm password
+change root password
+
+update system ( pacman -Syu )
+
+install sshd ( pacman -S openssh )
+
+enable sshd ( systemctl enable openssh )
+
+setup connman
+  pacman -S connman wpa_supplicant bluez
+  systemctl enable connman
+  systemctl start connman
+  connmanctl
+  technologies
+  enable wifi
+  scan wifi
+  services
+  agent on
+  connect wifi_XXXXXX_XXXXXXX_managed_XXXXX
+
+Setup sudo
+  pacman -S sudo
+  visudo
+  # add wheel group
+  usermod -a -G wheel alarm
+
+
+
