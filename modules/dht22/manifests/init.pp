@@ -12,13 +12,13 @@ class dht22 {
     }
 
     exec { 'git-checkout-adafruit-dht':
-        command => 'git clone https://github.com/adafruit/Adafruit_Python_DHT.git /opt/Adafruit_Python_DHT',
+        command => '/usr/bin/git clone https://github.com/adafruit/Adafruit_Python_DHT.git /opt/Adafruit_Python_DHT',
         unless  => '/usr/bin/test -d /opt/Adafruit_Python_DHT/.git',
         require => [ Class['helpers::install::git'], File['/opt/Adafruit_Python_DHT'] ],
     }
 
     exec { 'install-adafruit-dht':
-        command => 'python2 setup.py install',
+        command => '/usr/bin/python2 setup.py install',
         user    => 'root',
         cwd     => '/opt/Adafruit_Python_DHT',
         require => [ Class['helpers::install::python2'], Exec['git-checkout-adafruit-dht'] ],
