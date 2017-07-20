@@ -2,6 +2,7 @@
 class role::growtent {
 
     include dht22
+    include minico2
     include pilights::disable_network_led
     include sudoers
 
@@ -10,8 +11,7 @@ class role::growtent {
         influx_db    => 'telegraf',
     }
 
-    class { 'telegraf::plugins::input_dht22':
-        require => Class['dht22'],
-    }
+    include telegraf::plugins::input_dht22
+    include telegraf::plugins::input_minico2
 
 }
