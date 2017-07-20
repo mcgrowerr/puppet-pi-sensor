@@ -10,7 +10,7 @@ class sudo {
         owner   => 'root',
         group   => 'root',
         mode    => '0755',
-        content => template('sudo/sudoers'),
+        content => template('sudo/sudoers.erb'),
     }
 
 }
