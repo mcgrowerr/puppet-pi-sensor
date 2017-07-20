@@ -14,4 +14,6 @@ class role::growtent {
     include telegraf::plugins::input_dht22
     include telegraf::plugins::input_minico2
 
+    # disable logging to try to extend micro sd card life
+    include helpers::disable_logging
 }
