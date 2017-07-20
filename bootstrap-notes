@@ -28,4 +28,13 @@ Setup sudo
   usermod -a -G wheel alarm
 
 
+Add puppet, git
+  sudo pacman -S puppet
+  sudo pacman -S git
 
+
+clone puppet repo
+  git clone https://github.com/mcgrowerr/puppet-pi-sensor.git
+  sudo puppet apply --modulepath=~alarm/puppet-pi-sensor/modules/ -e "include role::growtent"
+
+reboot
