@@ -14,6 +14,6 @@ class helpers::disable_logging {
         group   => 'root',
         mode    => '0644',
         content => template('helpers/disable_logging.conf.erb'),
-        require => File['/etc/systemd/jouranld.conf.d'],
+        require => File['/etc/systemd/journald.conf.d'],
     }
 }
