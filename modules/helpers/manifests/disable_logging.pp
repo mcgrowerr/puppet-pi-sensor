@@ -9,7 +9,7 @@ class helpers::disable_logging {
     }
 
     file { '/etc/systemd/journald.conf.d/disable_logging.conf':
-        ensure  => 'latest',
+        ensure  => 'file',
         owner   => 'root',
         group   => 'root',
         mode    => '0644',
