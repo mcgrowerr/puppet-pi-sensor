@@ -4,7 +4,7 @@ class ssh::server {
         ensure => 'installed',
     }
 
-    service { 'openssh':
+    service { 'sshd':
         ensure  => 'running',
         enable  => true,
         require => Package['openssh'],
