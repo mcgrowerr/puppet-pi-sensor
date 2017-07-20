@@ -6,10 +6,11 @@ class sudo {
     }
 
     file { '/etc/sudoers':
-        ensure => 'latest',
-        owner  => 'root',
-        group  => 'root',
-        mode   => '0755',
+        ensure  => 'present',
+        owner   => 'root',
+        group   => 'root',
+        mode    => '0755',
+        content => template('sudo/sudoers'),
     }
 
 }
