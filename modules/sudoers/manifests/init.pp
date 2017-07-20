@@ -1,7 +1,7 @@
 # Class to manage basic sudoers
 class sudoers {
 
-    package { 'sudoers':
+    package { 'sudo':
         ensure => 'installed',
     }
 
